@@ -1,26 +1,4 @@
-/* ============================================================
-   Caren's Birthday Website — script.js
-   ============================================================
-   HOW TO ADD PHOTOS TO THE GALLERY
-   ----------------------------------
-   Option A (click to upload — works in browser):
-     Just open index.html and click any gallery slot.
-     A file picker appears. Choose a photo from your device.
-     The photo fills that slot instantly.
 
-   Option B (add photos directly in code):
-     In the gallerySlots array below, replace the `img` value
-     with the filename of your photo (put the photos in the
-     same folder as index.html).
-     Example:
-       { img: 'caren1.jpg', label: 'Best friends' }
-     If `img` is set, that photo loads automatically on page load.
-   ============================================================ */
-
-/* ── Gallery slots ──────────────────────────────────────────
-   To pre-load a photo, add: img: 'your-filename.jpg'
-   Leave img out (or set to '') to show the placeholder.
-   ──────────────────────────────────────────────────────────*/
 const gallerySlots = [
   { sym: '🌸', label: 'Add a photo of Caren',     img: 'photo1.jpeg' },
   { sym: '🏮', label: 'Add a favourite memory',    img: 'photo2.jpeg' },
