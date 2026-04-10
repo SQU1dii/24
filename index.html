@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 24th Birthday, Caren! 生日快乐</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="bday-wrap" id="wrap">
+  <div id="lanterns"></div>
+  <div id="particles"></div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="age-ring"><span class="age-num">24</span></div>
+    <span class="hero-char">生日快乐</span>
+    <div class="hero-sub">Happy Birthday</div>
+    <div class="hero-name">✦ Caren ✦</div>
+  </div>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-sym">❧</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="section">
+
+    <!-- Wishes -->
+    <div class="section-title">祝福 · Wishes</div>
+    <div class="wishes-grid">
+      <div class="wish-card">
+        <span class="wish-icon">🏮</span>
+        <span class="wish-zh">福寿绵长</span>
+        <span class="wish-en">May fortune and longevity be yours forever</span>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🌸</span>
+        <span class="wish-zh">花开富贵</span>
+        <span class="wish-en">May blossoms bring prosperity to your life</span>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🐉</span>
+        <span class="wish-zh">龙腾虎跃</span>
+        <span class="wish-en">Rise with strength and boundless energy</span>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">✨</span>
+        <span class="wish-zh">万事如意</span>
+        <span class="wish-en">May all your wishes come true</span>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🎋</span>
+        <span class="wish-zh">岁岁平安</span>
+        <span class="wish-en">Peace and safety every year</span>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🍊</span>
+        <span class="wish-zh">吉祥如意</span>
+        <span class="wish-en">Good luck and happiness always</span>
+      </div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-sym">❧</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="section-title">相册 · Caren's Gallery</div>
+    <div class="gallery-grid" id="gallery"></div>
+    <!-- HOW TO ADD PHOTOS:
+         Option 1: Click any gallery slot on the page — a file picker opens, choose your photo.
+         Option 2: Replace the slot HTML in script.js gallerySlots array with:
+                   {img:'your-photo.jpg', label:'Caption here'}
+                   then in loadPhoto(), the image will load from that src.
+    -->
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-sym">❧</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Birthday Message -->
+    <div class="surprise-area">
+      <div class="section-title" style="margin-bottom:8px">💌 Birthday Message</div>
+      <p class="surprise-hint">A special message just for You</p>
+      <button class="surprise-btn" onclick="showMessage()" id="msgBtn">
+        Click here for a Birthday Message 🎊
+      </button>
+      <div class="msg-box" id="msgBox">
+        <div class="msg-poem" id="msgPoem"></div>
+        <div class="msg-footer">生日快乐 Caren · 24 岁 ✦</div>
+      </div>
+    </div>
+
+  </div><!-- /section -->
+
+  <!-- Footer symbols -->
+  <div class="bottom-chars">
+    <span class="bottom-char">福</span>
+    <span class="bottom-char">禄</span>
+    <span class="bottom-char">寿</span>
+  </div>
+
+  <div id="fireworks"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

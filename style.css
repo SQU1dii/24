@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+body {
+  background: #1a0800;
+}
+
+.bday-wrap {
+  background: linear-gradient(180deg, #1a0800 0%, #3d0e00 40%, #1a0800 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60px;
+  font-family: 'Lora', serif;
+}
+
+/* ── Lanterns ── */
+.lantern {
+  position: absolute;
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+.lantern svg {
+  filter: drop-shadow(0 0 10px #ff6600);
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg); }
+  50%       { transform: rotate(8deg); }
+}
+
+/* ── Floating particles ── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float linear infinite;
+  pointer-events: none;
+}
+@keyframes float {
+  0%   { transform: translateY(100vh) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 60px 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.age-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #ffd700;
+  background: #cc0000;
+  margin-bottom: 16px;
+  animation: spin-slow 8s linear infinite;
+}
+.age-num {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 38px;
+  color: #ffd700;
+  line-height: 1;
+}
+@keyframes spin-slow {
+  from { transform: rotate(0); }
+  to   { transform: rotate(360deg); }
+}
+
+.hero-char {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 80px;
+  color: #ffd700;
+  text-shadow: 0 0 30px #ff6600, 0 0 60px #ff3300;
+  animation: glow 2s ease-in-out infinite alternate;
+  display: block;
+  line-height: 1;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 20px #ff6600, 0 0 40px #ff3300; }
+  to   { text-shadow: 0 0 40px #ffd700, 0 0 80px #ff6600; }
+}
+
+.hero-sub {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  color: #ffcc44;
+  margin-top: 10px;
+  letter-spacing: 6px;
+}
+
+.hero-name {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 52px;
+  color: #fff;
+  margin-top: 6px;
+  text-shadow: 0 2px 16px #ff4400;
+}
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #cc3300, transparent);
+}
+.divider-sym {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+/* ── Section ── */
+.section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 30px;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: 0 0 16px #ff6600;
+}
+
+/* ── Wish cards ── */
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.wish-card {
+  background: rgba(180, 20, 0, 0.7);
+  border: 1px solid #cc3300;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: default;
+}
+.wish-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffd700;
+}
+.wish-icon {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 6px;
+}
+.wish-zh {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 17px;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 4px;
+}
+.wish-en {
+  font-size: 12px;
+  color: #ffcc88;
+  line-height: 1.4;
+}
+
+/* ── Gallery ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #cc3300;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background: #2a0800;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+  border-color: #ffd700;
+  z-index: 3;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.gallery-sym {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 32px;
+  color: #ffd700;
+}
+.gallery-label {
+  font-size: 10px;
+  color: #ffaa66;
+  text-align: center;
+  padding: 0 6px;
+  line-height: 1.3;
+}
+
+.gallery-upload {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 6px;
+  text-align: center;
+  font-size: 10px;
+  color: #ffd700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.gallery-item:hover .gallery-upload {
+  opacity: 1;
+}
+
+.upload-input {
+  display: none;
+}
+
+/* ── Birthday message section ── */
+.surprise-area {
+  text-align: center;
+  margin: 0 0 32px;
+  padding: 28px 20px;
+  background: rgba(100, 10, 0, 0.6);
+  border-radius: 20px;
+  border: 2px solid #cc3300;
+}
+
+.surprise-hint {
+  color: #ffaa66;
+  font-size: 13px;
+  margin-bottom: 18px;
+  font-family: 'Lora', serif;
+}
+
+.surprise-btn {
+  background: linear-gradient(135deg, #cc0000, #ff6600);
+  color: #fff;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 22px;
+  padding: 14px 36px;
+  border: 3px solid #ffd700;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(255, 100, 0, 0.4);
+}
+.surprise-btn:hover {
+  background: linear-gradient(135deg, #ff0000, #ffaa00);
+  transform: scale(1.06);
+  box-shadow: 0 8px 40px rgba(255, 200, 0, 0.6);
+}
+.surprise-btn:active {
+  transform: scale(0.96);
+}
+
+/* ── Message box ── */
+.msg-box {
+  margin-top: 22px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #cc3300;
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: none;
+  animation: fadeSlide 0.6s ease;
+}
+.msg-box.show {
+  display: block;
+}
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.msg-poem {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  color: #ffe8c0;
+  line-height: 1.9;
+  white-space: pre-line;
+  text-align: left;
+}
+
+.msg-footer {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 22px;
+  color: #ffd700;
+  text-align: center;
+  margin-top: 16px;
+  text-shadow: 0 0 16px #ff6600;
+}
+
+/* ── Fireworks ── */
+.firework {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: spark 0.9s ease-out forwards;
+}
+@keyframes spark {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+}
+
+/* ── Footer symbols ── */
+.bottom-chars {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px 0;
+}
+.bottom-char {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 40px;
+  color: #cc3300;
+  animation: pulse 2s ease-in-out infinite;
+}
+.bottom-char:nth-child(2) { animation-delay: 0.3s; }
+.bottom-char:nth-child(3) { animation-delay: 0.6s; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .hero-char  { font-size: 56px; }
+  .hero-name  { font-size: 38px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .wishes-grid  { grid-template-columns: repeat(2, 1fr); }
+  .surprise-btn { font-size: 17px; padding: 12px 24px; }
+}
